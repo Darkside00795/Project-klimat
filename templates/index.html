@@ -9,5 +9,17 @@
 <p>Тут буду выводить товары</p>
 <p>Тут будет футер сайта</p>
 
+{% for product in data %}
+<div style="border: 1px solid">
+  <h2>{{product.title}}</h2>
+  <p>{{product.price}}</p>
+
+  {% if product.text %}
+    <p>{{product.text}}</p>
+  {% endif %}
+
+</div>
+{% endfor %}
+
 <p>а тут я буду выводи бренды</p>
 {% endblock body %}
