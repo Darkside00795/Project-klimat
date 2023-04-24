@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit
+}
+
+html {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    color: #010d23
+}
+
+input,
+button,
+textarea {
+    font-family: inherit
+}
+
+main {
+    min-height: 700px
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5
+}
+
+hr {
+    margin: 20px 0;
+    width: 100%;
+    height: 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.box {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 30px;
+    column-gap: 20px;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.product__pic {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: rgb(235, 235, 235);
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.product__title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.product__price {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: auto;
+}

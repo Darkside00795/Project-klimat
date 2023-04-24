@@ -8,13 +8,15 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
-    products = Product.query.filter_by(isActive=True).order_by(
-        Product.price.desc()).all()
+    products = Product.query\
+        .filter_by(isActive=True)\
+        .order_by(Product.price.desc())\
+        .all()
     return render_template('index.html', data=products)
 
 
 class Product(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, unique=True)
     title = db.Column(db.String(100), nullable=False)
     price = db.Column(db.Integer, nullable=False)
     isActive = db.Column(db.Boolean, default=True)
@@ -35,6 +37,6 @@ def contacts():
 
 
 if __name__ == "__main__":
-    # app.app_context().push()
-    # db.create_all()
+    app.app_context().push()
+    db.create_all()
     app.run(debug=True)

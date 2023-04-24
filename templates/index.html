@@ -1,25 +1,25 @@
 {% extends "base.html" %}
 
-{% block title %}
-<title>Главная страница</title>
-{% endblock title %}
+
+{% block title %}Магазин кондиционеров{% endblock title %}
+
 
 {% block body %}
-<h1>Супер магазин</h1>
-<p>Тут буду выводить товары</p>
-<p>Тут будет футер сайта</p>
+<h1>Магазин кондиционеров</h1>
 
-{% for product in data %}
-<div style="border: 1px solid">
-  <h2>{{product.title}}</h2>
-  <p>{{product.price}}</p>
+<div class="products">
+  {% for product in data %}
 
-  {% if product.text %}
-    <p>{{product.text}}</p>
-  {% endif %}
+  <div class="product">
+    <img class="product__pic" src="" alt="{{product.title}}" width="350" height="350">
+    <div class="product__title">{{product.title}}</div>
+    <div class="product__price">{{product.price}} ₽</div>
+    {% if product.text %}
+    <div class="product__text">{{product.text}}</div>
+    {% endif %}
+  </div>
 
+  {% endfor %}
 </div>
-{% endfor %}
 
-<p>а тут я буду выводи бренды</p>
 {% endblock body %}
